@@ -23,6 +23,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'pmd'
 apply plugin: 'checkstyle'
 apply plugin: 'com.github.spotbugs'
+apply plugin: 'jacoco'
 
 check.dependsOn 'pmdMain', 'checkstyleMain', 'spotbugsMain'
 
@@ -120,6 +121,7 @@ android {
         debug {
             applicationIdSuffix '.debug'
             versionNameSuffix '-DEBUG'
+            testCoverageEnabled true
         }
     }
     lintOptions {
